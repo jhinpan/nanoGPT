@@ -10,11 +10,7 @@ import requests
 import numpy as np
 
 # download the tiny shakespeare dataset
-input_file_path = os.path.join(os.path.dirname(__file__), 'input.txt')
-if not os.path.exists(input_file_path):
-    data_url = 'https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt'
-    with open(input_file_path, 'w') as f:
-        f.write(requests.get(data_url).text)
+input_file_path = os.path.join(os.path.dirname(__file__), '1.txt')
 
 with open(input_file_path, 'r') as f:
     data = f.read()
@@ -60,9 +56,9 @@ meta = {
 with open(os.path.join(os.path.dirname(__file__), 'meta.pkl'), 'wb') as f:
     pickle.dump(meta, f)
 
-# length of dataset in characters:  1115394
+# length of dataset in characters: 1,607,894
 # all the unique characters:
-#  !$&',-.3:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
-# vocab size: 65
-# train has 1003854 tokens
-# val has 111540 tokens
+# !"'()*,-.0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXY]`abcdefghijklmnopqrstuvwxyz~
+# vocab size: 78
+# train has 1,447,104 tokens
+# val has 160,790 tokens

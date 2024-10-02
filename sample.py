@@ -76,7 +76,9 @@ start_ids = encode(start)
 x = (torch.tensor(start_ids, dtype=torch.long, device=device)[None, ...])
 
 # Load training data to compute character distribution
-with open(os.path.join('data/shakespeare_char', 'input.txt'), 'r') as f:
+# TODO: Fix here for different training data set as GoT1-5.txt
+# with open(os.path.join('data/shakespeare_char', 'input.txt'), 'r') as f:
+with open(os.path.join('data/GoT_4', '1+2+3+4.txt'), 'r') as f:
     train_data = f.read()
 
 # Function to compute character frequency
